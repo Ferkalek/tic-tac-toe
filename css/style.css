@@ -1,0 +1,95 @@
+td {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+}
+
+.elem-x:before,
+.elem-0:before {
+  content: "X";
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.elem-x:before {
+  content: "X";
+}
+.elem-0:before {
+  content: "0";
+}
+
+#wrapper {
+  position: relative;
+}
+
+#wrapper:before {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 156px;
+  height: 1px;
+  background: #999;
+  position: absolute;
+}
+
+#wrapper[class^="winner-"]:before {
+  opacity: 1;
+}
+
+#wrapper.winner-1:before {
+  top: 28px;
+  left: 7px;
+}
+#wrapper.winner-2:before {
+  top: 84px;
+  left: 7px;
+}
+#wrapper.winner-3:before {
+  top: 140px;
+  left: 7px;
+}
+
+#wrapper.winner-4:before,
+#wrapper.winner-5:before,
+#wrapper.winner-6:before,
+#wrapper.winner-7:before,
+#wrapper.winner-8:before {
+  transform-origin: top left;
+}
+
+#wrapper.winner-4:before,
+#wrapper.winner-5:before,
+#wrapper.winner-6:before {
+  transform: rotate(90deg);
+}
+
+#wrapper.winner-4:before {
+  left: 28px;
+  top: 7px;
+}
+#wrapper.winner-5:before {
+  left: 84px;
+  top: 7px;
+}
+#wrapper.winner-6:before {
+  left: 140px;
+  top: 7px;
+}
+#wrapper.winner-7:before {
+  transform: rotate(45deg);
+  top: 12px;
+  left: 13px;
+  width: 200px;
+}
+#wrapper.winner-8:before {
+  transform: rotate(-45deg);
+  top: 153px;
+  left: 16px;
+  width: 200px;
+}
+
+.hidden {
+  display: none;
+}
