@@ -14,20 +14,22 @@ const winResults = [
 let counterClic = 0;
 let arrX = [];
 let arr0 = [];
+let isStopGame = false;
 
 table.addEventListener("click", function (e) {
   if (
     e.target.classList.contains("elem-x") ||
-    e.target.classList.contains("elem-0") ||
-    !e.target.classList.contains("cell")
+    e.target.classList.contains("elem-o") ||
+    !e.target.classList.contains("cell") ||
+    isStopGame
   ) {
     return;
   }
 
-  counterClic++;
-
   const value = e.target.dataset.val;
   let result = null;
+
+  counterClic++;
 
   if (counterClic % 2) {
     e.target.classList.add("elem-x");
@@ -37,7 +39,7 @@ table.addEventListener("click", function (e) {
       result = checkoutWin(arrX);
     }
   } else {
-    e.target.classList.add("elem-0");
+    e.target.classList.add("elem-o");
     arr0.push(value);
 
     if (arr0.length > 2) {
@@ -48,6 +50,7 @@ table.addEventListener("click", function (e) {
   if (result !== null) {
     document.getElementById("wrapper").classList.add(`winner-${result}`);
     showButton();
+    isStopGame = true;
   }
 
   if (counterClic > 8) {
@@ -75,6 +78,7 @@ function showButton() {
 }
 
 btnResturt.addEventListener("click", function (e) {
+  isStopGame = false;
   counterClic = 0;
   arrX = [];
   arr0 = [];

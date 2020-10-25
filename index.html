@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <title>Tic Tac Toe | Game</title>
 </head>
 
 <body>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
 
-    <h1>Tic Tac Toe</h1>
+        <div class="flex-wrapper">
+            <div id="wrapper">
+                <table id="table">
+                    <tr>
+                        <td class="cell" data-val="1"></td>
+                        <td class="cell" data-val="2"></td>
+                        <td class="cell" data-val="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="cell" data-val="4"></td>
+                        <td class="cell" data-val="5"></td>
+                        <td class="cell" data-val="6"></td>
+                    </tr>
+                    <tr>
+                        <td class="cell" data-val="7"></td>
+                        <td class="cell" data-val="8"></td>
+                        <td class="cell" data-val="9"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-    <div id="wrapper">
-        <table id="table">
-            <tr>
-                <td class="cell" data-val="1"></td>
-                <td class="cell" data-val="2"></td>
-                <td class="cell" data-val="3"></td>
-            </tr>
-            <tr>
-                <td class="cell" data-val="4"></td>
-                <td class="cell" data-val="5"></td>
-                <td class="cell" data-val="6"></td>
-            </tr>
-            <tr>
-                <td class="cell" data-val="7"></td>
-                <td class="cell" data-val="8"></td>
-                <td class="cell" data-val="9"></td>
-            </tr>
-        </table>
+        <div class="btn-wrap">
+            <button class="hidden" type="button" id="resturt">Start</button>
+        </div>
     </div>
-
-    <button class="hidden" type="button" id="resturt">Start</button>
-
 </body>
 <script src="js/index.js"></script>
 
